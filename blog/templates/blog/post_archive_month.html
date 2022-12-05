@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}  {% endblock %}
+{% block content %} 
+
+<h1>Post Archives for {{ month|date:"Y N" }}</h1> <!-- month|date:"N, Y" -->
+
+<div>
+    <ul>
+        {% for post in object_list %}
+        <li>{{ post.modify_dt|date:"Y년 m일 d월" }}&nbsp;&nbsp;&nbsp;
+        <a href="{{ post.get_absolute_url }}"><strong>{{ post.title }}</strong></a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="fixed-bottom bg-info">
+    <div class="text-white font-italic text-right mr-5">Copyright &copy; 2019 DjangoBook by shkim</div>
+</footer>
+{% endblock %}

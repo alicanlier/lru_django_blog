@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+{%block title%}Post Detail{%endblock%}
+{%block content%}
+
+{%if latest_question_list %}
+	<ul>
+	{%for question in  latest_question_list %}
+		<li>
+			<a href="/polls/{{question.id}}/">{{question.question_text}}</a>
+		</li>
+	{% endfor %}
+	</ul>
+
+{% else %}
+	<p> No Polls are available.</p>
+{% endif %}
+
+<iframe title="[인터페이스구현] 웹어플리케이션 통합구현 과제" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/rvp7lo34w5zmi4q1y3b76g9ux@my?service=player_share" allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"></iframe>
+
+{% endblock %}
